@@ -1,5 +1,5 @@
 
-## SETUP ####
+## SETUP ########
 
 library(doParallel)
 library(doRNG)
@@ -21,7 +21,8 @@ meas %>%
   geom_point()
 
 
-## POMP WITH R FUNCTIONS ####
+
+## POMP WITH R FUNCTIONS ########
 
 #define transitions
 sir_step <- function (S, I, R, H, N, Beta, mu_IR, delta.t, ...)
@@ -81,7 +82,8 @@ sims %>%
   guides(color=FALSE)
 
 
-## POMP WITH C SNIPPETS ####
+
+## POMP WITH C SNIPPETS ########
 
 
 sir_step <- Csnippet("
@@ -131,7 +133,8 @@ sims %>%
   guides(color=FALSE)
 
 
-## TWEAKING PARAMETERS ####
+
+## TWEAKING PARAMETERS ########
 
 #default
 measSIR@params <- c(Beta=7.5,mu_IR=0.5,rho=0.5,eta=0.03,N=38000)
@@ -152,7 +155,8 @@ sims %>%
   guides(color=FALSE)
 
 
-## SEIR POMP ####
+
+## SEIR POMP ########
 
 
 seir_step <- Csnippet("
